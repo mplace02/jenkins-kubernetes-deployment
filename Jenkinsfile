@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "bravinwasike/react-app"
+    dockerimagename = "mplace02/react-app"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/mplace02/jenkins-kubernetes-deployment.git'
+        git branch: 'main' , credentialsId: 'github-credentials', url: 'https://github.com/mplace02/jenkins-kubernetes-deployment.git'
       }
     }
 
